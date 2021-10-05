@@ -1,5 +1,6 @@
 import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
-
+import { ProfesorService } from '../../services/profesor.service';
+import { Profesor } from '../../interfaces/profesor.interface'
 @Component({
   selector: 'app-profesor',
   templateUrl: './profesor.component.html',
@@ -8,7 +9,8 @@ import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 export class ProfesorComponent implements OnInit {
 
   mensaje: string = "";
-  constructor() { }
+  constructor(public profesorService: ProfesorService) {
+   }
 
   ngOnInit(): void {
   }
@@ -53,11 +55,21 @@ export class ProfesorComponent implements OnInit {
   mensaje_disponibilidad: string | null= "";
   mensaje_direccion: string | null= "";
 
+
+
   //direccion curriculum
   insertar(): void {
     var valido = 0;
     let regexp = new RegExp(/^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/);
+    const profesor: any = {
+      nombre: this.nombre,
+      apellido: this.apellido,
+      edad: this.edad,
+      email: this.email
+    }
+    this.profesorService.save(profesor).subscribe( result => console.log(result) );
 
+    /*
     if (/^\s+|\s+$/.test(this.nombre)) {
       this.mensaje_nombre = "Introduzca una cadena de texto.";
       this.nombre = "";
@@ -237,45 +249,12 @@ export class ProfesorComponent implements OnInit {
       this.mensaje_rut = "";
       valido++;
     }
-
+    */
     
     if(valido==15){
       console.log("Guarda el Profe");
     }
 
-
-    /*
-    var tarjeta = /^[0-9]{15,16}|(([0-9]{4}\s){3}[0-9]{3,4})$/;
-    if (/^\s+|\s+$/.test(this.anoexp)) {
-      this.mensaje_anoexp = "Introduzca un cadena de texto.";
-      this.anoexp = "";
-    } else if (this.anoexp.trim() == "") {
-      this.anoexp = "";
-      this.mensaje_anoexp = " El campo año de expiración no puede  estar vacio";
-    } else {
-      this.mensaje_anoexp = "";
-      valido++;
-    }
-    if (/^\s+|\s+$/.test(this.mesexp)) {
-      this.mensaje_mesexp = "Introduzca un cadena de texto.";
-      this.mesexp = "";
-    } else if (this.mesexp.trim() == "") {
-      this.mesexp = "";
-      this.mensaje_mesexp = " El campo mes de expiración no puede  estar vacio";
-    } else {
-      this.mensaje_mesexp = "";
-      valido++;
-    }
-    if(valido==3){
-      this.mensaje_nombreF = "Nombre: "+ this.nombre;
-      this.mensaje_emailF = "Email: " + this.email;
-      this.mensaje_numeroF = "Numero: "+ this.numero;
-    }else{
-      this.mensaje_nombreF = "";
-      this.mensaje_emailF = "";
-      this.mensaje_numeroF = "";
-    }
-    */
   }
 
 
