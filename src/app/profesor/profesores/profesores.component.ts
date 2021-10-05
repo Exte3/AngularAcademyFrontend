@@ -8,15 +8,48 @@ import { Profesor } from '../../interfaces/profesor.interface'
 })
 export class ProfesoresComponent implements OnInit {
 
-  constructor(private profesorService: ProfesorService) { 
-    //this.profesorCurrent = new Profesor();
+  constructor(public profesorService: ProfesorService) { 
   }
   ngOnInit(): void {
   }
-  @Input() profesorCurrent: Profesor | any;
+  lista_profesores: Profesor[] = [];
 
-  enviarModal(profesorSelect: Profesor){
-    this.profesorCurrent = profesorSelect;
-    //console.log("envia datos");
+  @Input() profesorCurrent: Profesor| any;
+
+  enviarModal(profesorSelect: Profesor| any){
+    //this.profesorCurrent = profesorSelect;
+    this.profesorCurrent = this.profesorService.profesor.find(profesor => profesor.id == profesorSelect);
+    console.log(this.profesorCurrent);
   }
 }
+/*
+interface Profesor {
+  id: number;
+  nombre: string;
+  apellido: string;
+  edad: number;
+
+  fnacimiento: string;
+  
+  email: string;
+  rut: string;
+  direccion: string;
+  password: string;
+  passwordConfirmation: string;
+  createdAt: string;
+  updatedAt: string;
+  
+  grado_academico: string;
+  asignaturas: string;
+  disponibilidad: string;
+  anos_experiencia: number;
+  
+
+  inicio_contrato: string;
+
+}
+*/
+
+
+
+

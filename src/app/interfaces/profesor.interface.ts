@@ -1,17 +1,25 @@
 export interface Profesor {
   id: number;
   nombre: string;
-  apellido?: any;
+  apellido: string;
   edad: number;
+
+  fnacimiento: string;
+  
   email: string;
+  rut: string;
+  direccion: string;
   password: string;
-  passwordConfirmation?: any;
+  passwordConfirmation: string;
   createdAt: string;
   updatedAt: string;
+  
   grado_academico: string;
-  asignaturas?: any;
-  disponibilidad?: any;
+  asignaturas: string;
+  disponibilidad: string;
   anos_experiencia: number;
+  
+
   inicio_contrato: string;
-  nacimiento?: any;
+
 }
