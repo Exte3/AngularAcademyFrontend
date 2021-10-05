@@ -6,19 +6,20 @@ import { LoginComponent } from './login/login/login.component';
 import { RegistroComponent } from './login/registro/registro.component';
 import { EditarprofesorComponent } from './profesor/editarprofesor/editarprofesor.component';
 import { ProfesoresComponent } from './profesor/profesores/profesores.component';
-
+import { ErrorComponent } from './general/error/error.component';
 
 const routes: Routes = [
-  { path:'login', component: LoginComponent},
-  { path:'home', component: HomeComponent},
-  { path:'registro', component: RegistroComponent},
-  { path: 'registrarprofesor', component: ProfesorComponent},
-  { path: 'profesores', component: ProfesoresComponent},
-  { path: 'editarprofesor', component: EditarprofesorComponent},
+  { path: '', component: HomeComponent },
+  { path: 'login', component: LoginComponent },
+  { path: 'registro', component: RegistroComponent },
+  { path: 'registrarprofesor', component: ProfesorComponent },
+  { path: 'profesores', component: ProfesoresComponent },
+  { path: 'editarprofesor', component: EditarprofesorComponent },
+  { path: '**', component: ErrorComponent },
 ];
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
-  exports: [RouterModule]
+  exports: [RouterModule],
 })
-export class AppRoutingModule { }
+export class AppRoutingModule {}

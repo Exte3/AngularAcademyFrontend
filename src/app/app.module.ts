@@ -11,9 +11,7 @@ import { ProfesorModule } from './profesor/profesor.module';
 import { CompartidaModule } from './compartida/compartida.module';
 
 @NgModule({
-  declarations: [
-    AppComponent,
-  ],
+  declarations: [AppComponent],
   imports: [
     BrowserModule,
     AppRoutingModule,
@@ -24,6 +22,6 @@ import { CompartidaModule } from './compartida/compartida.module';
     CompartidaModule,
   ],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
 })
-export class AppModule { }
+export class AppModule {}
