@@ -1,0 +1,229 @@
+<div class=" jumbotron">
+    <form class="form-signin">
+        <h1 class="h3 mb-3 font-weight-normal">Registra un Profesor</h1>
+        <div class="row">
+            <div class="col-3">
+                <div class="input-group">
+                    <span class="input-group-text" id="basic-addon1">Nombre</span>
+                    <input [(ngModel)]="nombre" name="nombre" type="text" id="inputNombre" class="form-control" placeholder="Nombre">
+                </div>
+            </div>
+            <div class="col-3">
+                <div class="input-group">
+                    <span class="input-group-text" id="basic-addon1">Apellido</span>
+                    <input [(ngModel)]="apellido" name="apellido" type="text" id="inputApellido" class="form-control" placeholder="Apellido">
+                </div>
+            </div>
+            <div class="col-3">
+                <div class="input-group">
+                    <span class="input-group-text" id="basic-addon1">Rut:</span>
+                    <input [(ngModel)]="rut" name="rut" type="text" id="inputRut" class="form-control" placeholder="12345678-9">
+                </div>
+            </div>
+            <div class="col-3">
+                <div class="input-group">
+                    <span class="input-group-text" id="basic-addon1">Edad</span>
+                    <input [(ngModel)]="edad" name="edad" type="number" id="inputEdad" class="form-control" placeholder="Edad">
+                </div>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-3">
+                <p style="color:red;">{{mensaje_nombre}}</p>
+            </div>
+            <div class="col-3">
+                <p style="color:red;">{{mensaje_apellido}}</p>
+            </div>
+            <div class="col-3">
+                <p style="color:red;">{{mensaje_rut}}</p>
+            </div>
+            <div class="col-3">
+                <p style="color:red;">{{mensaje_edad}}</p>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-6">
+                <div class="input-group">
+                    <span class="input-group-text" id="basic-addon1">Correo</span>
+                    <input [(ngModel)]="email" name="email" type="text" id="inputEmail" class="form-control" placeholder="ejemplo@ejemplo.cl">
+                </div>
+            </div>
+            <div class="col-3">
+                <div class="input-group">
+                    <span class="input-group-text" id="basic-addon1">Sexo</span>
+                    <select [(ngModel)]="sexo" name="sexo" class="form-select" id="inputGroupSelect02">
+                        <option value="" selected disabled>...</option>
+                        <option value="M">Mujer</option>
+                        <option value="H">Hombre</option>
+                    </select>
+                </div>
+            </div>
+            <div class="col-3">
+                <div class="input-group">
+                    <span class="input-group-text" id="basic-addon1">Telefono</span>
+                    <input [(ngModel)]="telefono" name="telefono" type="text" id="inputTelefono" class="form-control" placeholder="+56912345678">
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-6">
+                <p style="color:red;">{{mensaje_email}}</p>
+            </div>
+            <div class="col-3">
+                <p style="color:red;">{{mensaje_sexo}}</p>
+            </div>
+            <div class="col-3">
+                <p style="color:red;">{{mensaje_telefono}}</p>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-3">
+                <div class="input-group">
+                    <span class="input-group-text" id="basic-addon1">Especialidad</span>
+                    <input [(ngModel)]="especialidad" name="especialidad" type="text" id="inputEspecialidad" class="form-control" placeholder="Especialidad">
+                </div>
+            </div>
+            <div class="col-3">
+                <div class="input-group">
+                    <span class="input-group-text" id="basic-addon1">Grado Academico</span>
+                    <input [(ngModel)]="gradoAcademico" name="gradoAcademico" type="text" id="inputgradoAcademico" class="form-control" placeholder="Grado Academico">
+                </div>
+            </div>
+            <div class="col-3">
+                <div class="input-group">
+                    <span class="input-group-text" id="basic-addon1">Fecha Nacimiento</span>
+                    <input [(ngModel)]="fnacimiento" name="fnacimiento" type="date" id="inputfechaNacimiento" class="form-control">
+                </div>
+            </div>
+            <div class="col-3">
+                <div class="input-group">
+                    <span class="input-group-text" id="basic-addon1">Años de Experiencia</span>
+                    <input [(ngModel)]="anos_experiencia" name="anos_experiencia" type="number" id="inputanos_experiencia" class="form-control" placeholder="Años">
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-3">
+                <p style="color:red;">{{mensaje_especialidad}}</p>
+            </div>
+            <div class="col-3">
+                <p style="color:red;">{{mensaje_gradoAcademico}}</p>
+            </div>
+            <div class="col-3">
+                <p style="color:red;">{{mensaje_fnacimiento}}</p>
+            </div>
+            <div class="col-3">
+                <p style="color:red;">{{mensaje_anosExperiencia}}</p>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-6">
+                <div class="input-group">
+                    <span class="input-group-text" id="basic-addon1">Dirección</span>
+                    <input [(ngModel)]="direccion" name="direccion" type="text" id="inputTelefono" class="form-control" placeholder="Pais, Región, Comuna, Calle 123">
+                </div>
+            </div>
+            <div class="col-3">
+                <div class="input-group">
+                    <span class="input-group-text" id="basic-addon1">Disponibilidad</span>
+                    <select [(ngModel)]="disponibilidad" name="disponibilidad" class="form-select" id="inputDisponibilidad">
+                        <option value="" selected disabled>...</option>
+                        <option value="Full-Time">Full-Time</option>
+                        <option value="Part-Time">Part-Time</option>
+                    </select>
+                </div>
+            </div>
+            <div class="col-3">
+                <div class="input-group">
+                    <span class="input-group-text" id="basic-addon1">Grado Academico</span>
+                    <select [(ngModel)]="grado_academico" name="grado_academico" class="form-select" id="inputgrado_academico">
+                        <option value="" selected disabled>...</option>
+                        <option value="Profesional">Profesional</option>
+                        <option value="Doctorado">Doctorado</option>
+                        <option value="Universidad">Universidad</option>
+
+                    </select>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-6">
+                <p style="color:red;">{{mensaje_direccion}}</p>
+            </div>
+            <div class="col-3">
+                <p style="color:red;">{{mensaje_grado_academico}}</p>
+            </div>
+            <div class="col-3">
+                <p style="color:red;">{{mensaje_disponibilidad}}</p>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-6">
+                <div class="input-group">
+                    <span class="input-group-text" id="basic-addon1">Contraseña</span>
+                    <input [(ngModel)]="password" name="password" type="password" id="inputPassword" class="form-control" placeholder="**********">
+                </div>
+            </div>
+            <div class="col-6">
+                <div class="input-group">
+                    <span class="input-group-text" id="basic-addon1">Confirmar Contraseña</span>
+                    <input [(ngModel)]="passwordConfirmation" name="passwordConfirmation" type="password" id="inputpasswordConfirmation" class="form-control" placeholder="**********">
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-6">
+                <p style="color:red;">{{mensaje_password}}</p>
+            </div>
+        </div>
+    </form>
+    <button type="button" class="btn btn-primary" (click)="insertar()">Registrar</button>
+</div>
+
+
+<!--
+    <label for="inputCalle" class="sr-only">Calle</label>
+    <input [(ngModel)]="calle" name="calle" type="text" id="inputCalle" class="form-control" placeholder="Calle">
+    <p style="color:red;">{{mensaje_calle}}</p>
+    
+    <label for="inputCiudad" class="sr-only">Ciudad</label>
+    <input [(ngModel)]="ciudad" name="ciudad" type="text" id="inputCiudad" class="form-control" placeholder="Ciudad">
+    <p style="color:red;">{{mensaje_ciudad}}</p>
+    
+    <label for="inputRegion" class="sr-only">Region</label>
+    <input [(ngModel)]="region" name="region" type="text" id="inputRegion" class="form-control" placeholder="Region">
+    <p style="color:red;">{{mensaje_region}}</p>
+    
+    <label for="inputCodigopostal" class="sr-only">Código Postal</label>
+    <input [(ngModel)]="codigopostal" name="codigopostal" type="text" id="inputCodigopostal" class="form-control" placeholder="Código Postal">
+    <p style="color:red;">{{mensaje_codigopostal}}</p>
+    
+    <label for="inputTipotarjeta" class="sr-only">Tipo de Tarjeta</label>
+    <input [(ngModel)]="tipotarjeta" name="tipotarjeta" type="text" id="inputTipotarjeta" class="form-control" placeholder="Tipo de Tarjeta">
+    <p style="color:red;">{{mensaje_tipotarjeta}}</p>
+    
+
+    
+    <label for="inputNumerotarjeta" class="sr-only">Numero de Tarjeta</label>
+    <input [(ngModel)]="numerotarjeta" name="numerotarjeta" type="text" id="inputNumerotarjeta" class="form-control" placeholder="1234 1234 1234 1234">
+    <p style="color:red;">{{mensaje_numerotarjeta}}</p>
+    
+    <label for="inputCodigo" class="sr-only">Código de Seguridad</label>
+    <input [(ngModel)]="codigo" name="codigo" type="text" id="inputCodigo" class="form-control" placeholder="Código de Seguridad">
+    <p style="color:red;">{{mensaje_codigo}}</p>
+    
+    <label for="inputMesexp" class="sr-only">Mes de expiración</label>
+    <input [(ngModel)]="mesexp" name="mesexp" type="text" id="inputMesexp" class="form-control" placeholder="Mes de expiración">
+    <p style="color:red;">{{mensaje_mesexp}}</p>
+    
+    <label for="inputAnoexp" class="sr-only">Año de expiración</label>
+    <input [(ngModel)]="anoexp" name="anoexp" type="text" id="inputAnoexp" class="form-control" placeholder="Año de expiración">
+    <p style="color:red;">{{mensaje_anoexp}}</p>
+
+
+
+-->
