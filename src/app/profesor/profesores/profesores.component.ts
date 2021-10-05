@@ -1,5 +1,6 @@
-import { Component, OnInit } from '@angular/core';
-
+import { Component, Input, OnInit } from '@angular/core';
+import { ProfesorService } from 'src/app/services/profesor.service';
+import { Profesor } from '../../interfaces/profesor.interface'
 @Component({
   selector: 'app-profesores',
   templateUrl: './profesores.component.html',
@@ -7,9 +8,15 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ProfesoresComponent implements OnInit {
 
-  constructor() { }
-
+  constructor(private profesorService: ProfesorService) { 
+    //this.profesorCurrent = new Profesor();
+  }
   ngOnInit(): void {
   }
+  @Input() profesorCurrent: Profesor | any;
 
+  enviarModal(profesorSelect: Profesor){
+    this.profesorCurrent = profesorSelect;
+    //console.log("envia datos");
+  }
 }

@@ -6,16 +6,21 @@ import { Profesor } from '../interfaces/profesor.interface';
   providedIn: 'root'
 })
 export class ProfesorService {
-  url: string = "";
+  private url: string;
   profesor: Profesor[] = [];
 
   constructor(private http: HttpClient) {
+    this.url = "http://localhost:8080/api";
     this.cargarProfesores();
   }
 
   public cargarProfesores() {
-    this.http.get('assets/data/productos.json').subscribe( (response: Profesor | any) => {
+    this.http.get(this.url+"/profesores").subscribe( (response: Profesor | any) => {
       this.profesor = response.productos;
     });
+  }
+
+  public save(profesor: Profesor) {
+    return this.http.post<Profesor>(this.url+"agregar_profesor", profesor);
   }
 }

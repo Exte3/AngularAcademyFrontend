@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
+import { Profesor } from '../../interfaces/profesor.interface'
 
 @Component({
   selector: 'app-editarprofesor',
@@ -6,6 +7,8 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./editarprofesor.component.css']
 })
 export class EditarprofesorComponent implements OnInit {
+
+  @Input() profesorCurrent: Profesor | any;
 
   constructor() { }
 
