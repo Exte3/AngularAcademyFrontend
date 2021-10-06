@@ -19,7 +19,10 @@ export interface Profesor {
   disponibilidad: string;
   anos_experiencia: number;
   
-
+  especialidad: string;
   inicio_contrato: string;
 
+
+  telefono: string;
+  sexo: string;
 }

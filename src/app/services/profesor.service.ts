@@ -26,4 +26,8 @@ export class ProfesorService {
   public save(profesor: Profesor) {
     return this.http.post<Profesor>(this.url + '/agregar_profesor', profesor);
   }
+  
+  public edit(profesor: Profesor) {
+    return this.http.post<Profesor>(this.url + '/actualizar_profesor', profesor);
+  }
 }

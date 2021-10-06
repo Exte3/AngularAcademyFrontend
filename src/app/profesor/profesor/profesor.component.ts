@@ -8,9 +8,7 @@ import { Profesor } from '../../interfaces/profesor.interface'
 })
 export class ProfesorComponent implements OnInit {
 
-  mensaje: string = "";
-  constructor(public profesorService: ProfesorService) {
-   }
+  constructor(public profesorService: ProfesorService) {}
 
   ngOnInit(): void {
   }
@@ -55,7 +53,6 @@ export class ProfesorComponent implements OnInit {
   mensaje_disponibilidad: string | null= "";
   mensaje_direccion: string | null= "";
 
-  //direccion curriculum
   insertar(): void {
     var valido = 0;
     let regexp = new RegExp(/^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/);
@@ -69,7 +66,7 @@ export class ProfesorComponent implements OnInit {
       telefono: this.telefono,
       especialidad: this.especialidad,
       grado_academico: this.grado_academico,
-      fnacimiento: this.fnacimiento,
+      nacimiento: this.fnacimiento,
       anos_experiencia: this.anos_experiencia,
       direccion: this.direccion,
       disponibilidad: this.disponibilidad,
@@ -78,7 +75,7 @@ export class ProfesorComponent implements OnInit {
     }
 
 
-    
+
     if (/^\s+|\s+$/.test(this.nombre)) {
       this.mensaje_nombre = "Introduzca una cadena de texto.";
       this.nombre = "";
@@ -115,10 +112,13 @@ export class ProfesorComponent implements OnInit {
     }
 
     if (!this.edad) {
-      this.mensaje_edad = "El campo edad no puede estar vacio";
+      this.mensaje_edad = "El campo Edad no puede estar vacio";
       this.edad = null;
     } else if (/^\s+|\s+$/.test(this.edad)) {
-      this.mensaje_edad = "Introduzca una cadena de texto.";
+      this.mensaje_edad = "Introduzca un numero.";
+      this.edad = null;
+    } else if (this.edad <= 0) {
+      this.mensaje_edad = "El campo Edad no puede ser negativo.";
       this.edad = null;
     } else {
       this.mensaje_edad = "";
@@ -202,6 +202,9 @@ export class ProfesorComponent implements OnInit {
     } else if (/^\s+|\s+$/.test(this.anos_experiencia)) {
       this.mensaje_anosExperiencia = "Introduzca un numero";
       this.anos_experiencia = null;
+    } else if (this.anos_experiencia <= 0) {
+      this.mensaje_anosExperiencia = "El campo Años de Experencia no puede ser negativo.";
+      this.anos_experiencia = null;
     } else {
       this.mensaje_anosExperiencia = "";
       valido++;
@@ -209,7 +212,7 @@ export class ProfesorComponent implements OnInit {
 
     if (/^\s+|\s+$/.test(this.direccion)) {
       this.mensaje_direccion = "Introduzca una cadena de texto.";
-      this.sexo = "";
+      this.direccion = "";
     } else if (this.direccion.trim() == "") {
       this.direccion = "";
       this.mensaje_direccion = " El campo Dirección no puede  estar vacio";
