@@ -1,94 +1,152 @@
-<div class="img-center jumbotron col-lg-11 mx-5" style=" position: absolute;">
-    <form class="form-signin">
-        <h1 class="h3 mb-3 font-weight-normal" style="text-align: center;">Registra un Profesor</h1>
-        <div class="row">
-            <div class="col-6 col-sm-3">
-                <div class="input-group">
-                    <span class="input-group-text" id="basic-addon1">Nombre</span>
-                    <input [(ngModel)]="nombre" name="nombre" type="text" id="inputNombre" class="form-control" placeholder="Nombre" />
-                </div>
-            </div>
-            <div class="col-6 col-sm-3">
-                <div class="input-group">
-                    <span class="input-group-text" id="basic-addon1">Apellido</span>
-                    <input [(ngModel)]="apellido" name="apellido" type="text" id="inputApellido" class="form-control" placeholder="Apellido" />
-                </div>
-            </div>
-            <div class="col-6 col-sm-3">
-                <div class="input-group">
-                    <span class="input-group-text" id="basic-addon1">Rut:</span>
-                    <input [(ngModel)]="rut" name="rut" type="text" id="inputRut" class="form-control" placeholder="12345678-9" />
-                </div>
-            </div>
-            <div class="col-6 col-sm-3">
-                <div class="input-group">
-                    <span class="input-group-text" id="basic-addon1">Edad</span>
-                    <input [(ngModel)]="edad" name="edad" type="number" id="inputEdad" class="form-control" placeholder="Edad" />
-                </div>
-            </div>
+<app-navbar></app-navbar>
+<div class="img-center jumbotron col-lg-11 mx-5" style="position: absolute">
+  <form class="form-signin">
+    <h1 class="h3 mb-3 font-weight-normal" style="text-align: center">
+      Registra un Profesor
+    </h1>
+    <div class="row">
+      <div class="col-6 col-sm-3">
+        <div class="input-group">
+          <span class="input-group-text" id="basic-addon1">Nombre</span>
+          <input
+            [(ngModel)]="nombre"
+            name="nombre"
+            type="text"
+            id="inputNombre"
+            class="form-control"
+            placeholder="Nombre"
+          />
         </div>
-
-        <div class="row">
-            <div class="col-3">
-                <p style="color: red">{{ mensaje_nombre }}</p>
-            </div>
-            <div class="col-3">
-                <p style="color: red">{{ mensaje_apellido }}</p>
-            </div>
-            <div class="col-3">
-                <p style="color: red">{{ mensaje_rut }}</p>
-            </div>
-            <div class="col-3">
-                <p style="color: red">{{ mensaje_edad }}</p>
-            </div>
+      </div>
+      <div class="col-6 col-sm-3">
+        <div class="input-group">
+          <span class="input-group-text" id="basic-addon1">Apellido</span>
+          <input
+            [(ngModel)]="apellido"
+            name="apellido"
+            type="text"
+            id="inputApellido"
+            class="form-control"
+            placeholder="Apellido"
+          />
         </div>
+      </div>
+      <div class="col-6 col-sm-3">
+        <div class="input-group">
+          <span class="input-group-text" id="basic-addon1">Rut:</span>
+          <input
+            [(ngModel)]="rut"
+            name="rut"
+            type="text"
+            id="inputRut"
+            class="form-control"
+            placeholder="12345678-9"
+          />
+        </div>
+      </div>
+      <div class="col-6 col-sm-3">
+        <div class="input-group">
+          <span class="input-group-text" id="basic-addon1">Edad</span>
+          <input
+            [(ngModel)]="edad"
+            name="edad"
+            type="number"
+            id="inputEdad"
+            class="form-control"
+            placeholder="Edad"
+          />
+        </div>
+      </div>
+    </div>
 
-        <div class="row">
-            <div class="col-12 col-sm-6">
-                <div class="input-group">
-                    <span class="input-group-text" id="basic-addon1">Correo</span>
-                    <input [(ngModel)]="email" name="email" type="text" id="inputEmail" class="form-control" placeholder="ejemplo@ejemplo.cl" />
-                </div>
-            </div>
-            <div class="col-6 col-sm-3">
-                <div class="input-group">
-                    <span class="input-group-text" id="basic-addon1">Sexo</span>
-                    <select [(ngModel)]="sexo" name="sexo" class="form-select" id="inputGroupSelect02">
+    <div class="row">
+      <div class="col-3">
+        <p style="color: red">{{ mensaje_nombre }}</p>
+      </div>
+      <div class="col-3">
+        <p style="color: red">{{ mensaje_apellido }}</p>
+      </div>
+      <div class="col-3">
+        <p style="color: red">{{ mensaje_rut }}</p>
+      </div>
+      <div class="col-3">
+        <p style="color: red">{{ mensaje_edad }}</p>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col-12 col-sm-6">
+        <div class="input-group">
+          <span class="input-group-text" id="basic-addon1">Correo</span>
+          <input
+            [(ngModel)]="email"
+            name="email"
+            type="text"
+            id="inputEmail"
+            class="form-control"
+            placeholder="ejemplo@ejemplo.cl"
+          />
+        </div>
+      </div>
+      <div class="col-6 col-sm-3">
+        <div class="input-group">
+          <span class="input-group-text" id="basic-addon1">Sexo</span>
+          <select
+            [(ngModel)]="sexo"
+            name="sexo"
+            class="form-select"
+            id="inputGroupSelect02"
+          >
             <option value="" selected disabled>...</option>
             <option value="M">Mujer</option>
             <option value="H">Hombre</option>
           </select>
-                </div>
-            </div>
-            <div class="col-6 col-sm-3">
-                <div class="input-group">
-                    <span class="input-group-text" id="basic-addon1">Telefono</span>
-                    <input [(ngModel)]="telefono" name="telefono" type="text" id="inputTelefono" class="form-control" placeholder="XXX-XXX-XXXX" />
-                </div>
-            </div>
         </div>
-        <div class="row">
-            <div class="col-6">
-                <p style="color: red">{{ mensaje_email }}</p>
-            </div>
-            <div class="col-3">
-                <p style="color: red">{{ mensaje_sexo }}</p>
-            </div>
-            <div class="col-3">
-                <p style="color: red">{{ mensaje_telefono }}</p>
-            </div>
+      </div>
+      <div class="col-6 col-sm-3">
+        <div class="input-group">
+          <span class="input-group-text" id="basic-addon1">Telefono</span>
+          <input
+            [(ngModel)]="telefono"
+            name="telefono"
+            type="text"
+            id="inputTelefono"
+            class="form-control"
+            placeholder="XXX-XXX-XXXX"
+          />
         </div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-6">
+        <p style="color: red">{{ mensaje_email }}</p>
+      </div>
+      <div class="col-3">
+        <p style="color: red">{{ mensaje_sexo }}</p>
+      </div>
+      <div class="col-3">
+        <p style="color: red">{{ mensaje_telefono }}</p>
+      </div>
+    </div>
 
-        <div class="row">
-            <div class="col-12 col-sm-4">
-                <div class="input-group">
-                    <span class="input-group-text" id="basic-addon1">Especialidad</span>
-                    <input [(ngModel)]="especialidad" name="especialidad" type="text" id="inputEspecialidad" class="form-control" placeholder="Especialidad" />
-                </div>
-            </div>
-            <div class="col-6 col-sm-4">
-                <div class="input-group">
-                    <span class="input-group-text" id="basic-addon1">Fecha Nacimiento</span
+    <div class="row">
+      <div class="col-12 col-sm-4">
+        <div class="input-group">
+          <span class="input-group-text" id="basic-addon1">Especialidad</span>
+          <input
+            [(ngModel)]="especialidad"
+            name="especialidad"
+            type="text"
+            id="inputEspecialidad"
+            class="form-control"
+            placeholder="Especialidad"
+          />
+        </div>
+      </div>
+      <div class="col-6 col-sm-4">
+        <div class="input-group">
+          <span class="input-group-text" id="basic-addon1"
+            >Fecha Nacimiento</span
           >
           <input
             [(ngModel)]="fnacimiento"
@@ -131,22 +189,35 @@
       <div class="col-12 col-sm-6">
         <div class="input-group">
           <span class="input-group-text" id="basic-addon1">Dirección</span>
-                    <input [(ngModel)]="direccion" name="direccion" type="text" id="inputDireccion" class="form-control" placeholder="Pais, Región, Comuna, Calle 123" />
-                </div>
-            </div>
-            <div class="col-6 col-sm-3">
-                <div class="input-group">
-                    <span class="input-group-text" id="basic-addon1">Disponibilidad</span>
-                    <select [(ngModel)]="disponibilidad" name="disponibilidad" class="form-select" id="inputDisponibilidad">
+          <input
+            [(ngModel)]="direccion"
+            name="direccion"
+            type="text"
+            id="inputDireccion"
+            class="form-control"
+            placeholder="Pais, Región, Comuna, Calle 123"
+          />
+        </div>
+      </div>
+      <div class="col-6 col-sm-3">
+        <div class="input-group">
+          <span class="input-group-text" id="basic-addon1">Disponibilidad</span>
+          <select
+            [(ngModel)]="disponibilidad"
+            name="disponibilidad"
+            class="form-select"
+            id="inputDisponibilidad"
+          >
             <option value="" selected disabled>...</option>
             <option value="Full-Time">Full-Time</option>
             <option value="Part-Time">Part-Time</option>
           </select>
-                </div>
-            </div>
-            <div class="col-6 col-sm-3">
-                <div class="input-group">
-                    <span class="input-group-text" id="basic-addon1">Grado Academico</span
+        </div>
+      </div>
+      <div class="col-6 col-sm-3">
+        <div class="input-group">
+          <span class="input-group-text" id="basic-addon1"
+            >Grado Academico</span
           >
           <select
             [(ngModel)]="grado_academico"
@@ -178,12 +249,20 @@
       <div class="col-12 col-sm-6">
         <div class="input-group">
           <span class="input-group-text" id="basic-addon1">Contraseña</span>
-                    <input [(ngModel)]="password" name="password" type="password" id="inputPassword" class="form-control" placeholder="**********" />
-                </div>
-            </div>
-            <div class="col-12 col-sm-6">
-                <div class="input-group">
-                    <span class="input-group-text" id="basic-addon1">Confirmar Contraseña</span
+          <input
+            [(ngModel)]="password"
+            name="password"
+            type="password"
+            id="inputPassword"
+            class="form-control"
+            placeholder="**********"
+          />
+        </div>
+      </div>
+      <div class="col-12 col-sm-6">
+        <div class="input-group">
+          <span class="input-group-text" id="basic-addon1"
+            >Confirmar Contraseña</span
           >
           <input
             [(ngModel)]="passwordConfirmation"
@@ -205,10 +284,12 @@
   <button type="submit" class="btn btn-primary" (click)="insertar()">
     Registrar
   </button>
-  <br>
-  <div *ngIf="show_alert==true" class="alert alert-success mt-2 text-center" role="alert" >
-    <b>
-      ¡¡¡Profesor registrado con exito!!!
-    </b>
+  <br />
+  <div
+    *ngIf="show_alert == true"
+    class="alert alert-success mt-2 text-center"
+    role="alert"
+  >
+    <b> ¡¡¡Profesor registrado con exito!!! </b>
   </div>
 </div>
