@@ -2,25 +2,25 @@
     <form class="form-signin">
         <h1 class="h3 mb-3 font-weight-normal">Registra un Profesor</h1>
         <div class="row">
-            <div class="col-3">
+            <div class="col-6 col-sm-3">
                 <div class="input-group">
                     <span class="input-group-text" id="basic-addon1">Nombre</span>
                     <input [(ngModel)]="nombre" name="nombre" type="text" id="inputNombre" class="form-control" placeholder="Nombre">
                 </div>
             </div>
-            <div class="col-3">
+            <div class="col-6 col-sm-3">
                 <div class="input-group">
                     <span class="input-group-text" id="basic-addon1">Apellido</span>
                     <input [(ngModel)]="apellido" name="apellido" type="text" id="inputApellido" class="form-control" placeholder="Apellido">
                 </div>
             </div>
-            <div class="col-3">
+            <div class="col-6 col-sm-3">
                 <div class="input-group">
                     <span class="input-group-text" id="basic-addon1">Rut:</span>
                     <input [(ngModel)]="rut" name="rut" type="text" id="inputRut" class="form-control" placeholder="12345678-9">
                 </div>
             </div>
-            <div class="col-3">
+            <div class="col-6 col-sm-3">
                 <div class="input-group">
                     <span class="input-group-text" id="basic-addon1">Edad</span>
                     <input [(ngModel)]="edad" name="edad" type="number" id="inputEdad" class="form-control" placeholder="Edad">
@@ -44,13 +44,13 @@
         </div>
 
         <div class="row">
-            <div class="col-6">
+            <div class="col-12 col-sm-6">
                 <div class="input-group">
                     <span class="input-group-text" id="basic-addon1">Correo</span>
                     <input [(ngModel)]="email" name="email" type="text" id="inputEmail" class="form-control" placeholder="ejemplo@ejemplo.cl">
                 </div>
             </div>
-            <div class="col-3">
+            <div class="col-6 col-sm-3">
                 <div class="input-group">
                     <span class="input-group-text" id="basic-addon1">Sexo</span>
                     <select [(ngModel)]="sexo" name="sexo" class="form-select" id="inputGroupSelect02">
@@ -60,7 +60,7 @@
                     </select>
                 </div>
             </div>
-            <div class="col-3">
+            <div class="col-6 col-sm-3">
                 <div class="input-group">
                     <span class="input-group-text" id="basic-addon1">Telefono</span>
                     <input [(ngModel)]="telefono" name="telefono" type="text" id="inputTelefono" class="form-control" placeholder="+56912345678">
@@ -80,25 +80,19 @@
         </div>
 
         <div class="row">
-            <div class="col-3">
+            <div class="col-12 col-sm-6">
                 <div class="input-group">
                     <span class="input-group-text" id="basic-addon1">Especialidad</span>
                     <input [(ngModel)]="especialidad" name="especialidad" type="text" id="inputEspecialidad" class="form-control" placeholder="Especialidad">
                 </div>
             </div>
-            <div class="col-3">
-                <div class="input-group">
-                    <span class="input-group-text" id="basic-addon1">Grado Academico</span>
-                    <input [(ngModel)]="gradoAcademico" name="gradoAcademico" type="text" id="inputgradoAcademico" class="form-control" placeholder="Grado Academico">
-                </div>
-            </div>
-            <div class="col-3">
+            <div class="col-6 col-sm-3">
                 <div class="input-group">
                     <span class="input-group-text" id="basic-addon1">Fecha Nacimiento</span>
                     <input [(ngModel)]="fnacimiento" name="fnacimiento" type="date" id="inputfechaNacimiento" class="form-control">
                 </div>
             </div>
-            <div class="col-3">
+            <div class="col-6 col-sm-3">
                 <div class="input-group">
                     <span class="input-group-text" id="basic-addon1">Años de Experiencia</span>
                     <input [(ngModel)]="anos_experiencia" name="anos_experiencia" type="number" id="inputanos_experiencia" class="form-control" placeholder="Años">
@@ -106,11 +100,8 @@
             </div>
         </div>
         <div class="row">
-            <div class="col-3">
+            <div class="col-6">
                 <p style="color:red;">{{mensaje_especialidad}}</p>
-            </div>
-            <div class="col-3">
-                <p style="color:red;">{{mensaje_gradoAcademico}}</p>
             </div>
             <div class="col-3">
                 <p style="color:red;">{{mensaje_fnacimiento}}</p>
@@ -120,13 +111,13 @@
             </div>
         </div>
         <div class="row">
-            <div class="col-6">
+            <div class="col-12 col-sm-6">
                 <div class="input-group">
                     <span class="input-group-text" id="basic-addon1">Dirección</span>
                     <input [(ngModel)]="direccion" name="direccion" type="text" id="inputDireccion" class="form-control" placeholder="Pais, Región, Comuna, Calle 123">
                 </div>
             </div>
-            <div class="col-3">
+            <div class="col-6 col-sm-3">
                 <div class="input-group">
                     <span class="input-group-text" id="basic-addon1">Disponibilidad</span>
                     <select [(ngModel)]="disponibilidad" name="disponibilidad" class="form-select" id="inputDisponibilidad">
@@ -136,7 +127,7 @@
                     </select>
                 </div>
             </div>
-            <div class="col-3">
+            <div class="col-6 col-sm-3">
                 <div class="input-group">
                     <span class="input-group-text" id="basic-addon1">Grado Academico</span>
                     <select [(ngModel)]="grado_academico" name="grado_academico" class="form-select" id="inputgrado_academico">
@@ -162,13 +153,13 @@
         </div>
 
         <div class="row">
-            <div class="col-6">
+            <div class="col-12 col-sm-6">
                 <div class="input-group">
                     <span class="input-group-text" id="basic-addon1">Contraseña</span>
                     <input [(ngModel)]="password" name="password" type="password" id="inputPassword" class="form-control" placeholder="**********">
                 </div>
             </div>
-            <div class="col-6">
+            <div class="col-12 col-sm-6">
                 <div class="input-group">
                     <span class="input-group-text" id="basic-addon1">Confirmar Contraseña</span>
                     <input [(ngModel)]="passwordConfirmation" name="passwordConfirmation" type="password" id="inputpasswordConfirmation" class="form-control" placeholder="**********">
@@ -181,5 +172,6 @@
             </div>
         </div>
     </form>
-    <button type="button" class="btn btn-primary" (click)="insertar()">Registrar</button>
+    <button type="submit" class="btn btn-primary" (click)="insertar()">
+        Registrar</button>
 </div>

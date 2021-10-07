@@ -8,15 +8,27 @@ import { Profesor } from '../../interfaces/profesor.interface'
 })
 export class ProfesoresComponent implements OnInit {
 
-  constructor(private profesorService: ProfesorService) { 
-    //this.profesorCurrent = new Profesor();
+  constructor(public profesorService: ProfesorService) { 
   }
   ngOnInit(): void {
   }
-  @Input() profesorCurrent: Profesor | any;
+  lista_profesores: Profesor[] = [];
 
-  enviarModal(profesorSelect: Profesor){
-    this.profesorCurrent = profesorSelect;
-    //console.log("envia datos");
+  @Input() profesorCurrent: Profesor| any;
+  
+  enviarModal(profesorSelect: Profesor| any){
+    this.profesorCurrent = this.profesorService.profesor.find(profesor => profesor.id == profesorSelect);
+  }
+
+  eliminaProfesor(profesor: Profesor){
+    console.log("esta a punto de eliminar el profesor de id: ", profesor.id);
+
+    //let eliminar = this.profesorService.profesor.findIndex(profe => profe.id === profesor.id);
+
+    this.profesorService.elimina(profesor.id).subscribe( result => console.log(result) );
   }
 }
+
+
+
+
