@@ -5,7 +5,7 @@ export interface Profesor {
   edad: number;
 
   fnacimiento: string;
-  
+
   email: string;
   rut: string;
   direccion: string;
@@ -13,15 +13,14 @@ export interface Profesor {
   passwordConfirmation: string;
   createdAt: string;
   updatedAt: string;
-  
+
   grado_academico: string;
   asignaturas: string;
   disponibilidad: string;
   anos_experiencia: number;
-  
+
   especialidad: string;
   inicio_contrato: string;
-
 
   telefono: string;
   sexo: string;

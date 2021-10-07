@@ -1,188 +1,360 @@
-<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-    <div class="modal-dialog modal-xl">
-        <div class="modal-content">
-            <div class="modal-header">
-                <h5 class="modal-title" id="exampleModalLabel">Editar Profesor</h5>
-                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+<div
+  class="modal fade"
+  id="exampleModal"
+  tabindex="-1"
+  aria-labelledby="exampleModalLabel"
+  aria-hidden="true"
+>
+  <div class="modal-dialog modal-xl">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Editar Profesor</h5>
+        <button
+          type="button"
+          class="btn-close"
+          data-bs-dismiss="modal"
+          aria-label="Close"
+        ></button>
+      </div>
+      <div class="modal-body">
+        <form class="form-signin" *ngIf="profesorCurrent">
+          <div class="row">
+            <div class="col-6 col-sm-3">
+              <div class="input-group">
+                <span class="input-group-text" id="basic-addon1">Nombre</span>
+                <input
+                  value="{{ profesorCurrent.nombre }}"
+                  name="nombre"
+                  type="text"
+                  id="inputNombre"
+                  class="form-control"
+                  placeholder="Nombre"
+                  #profesorNombre
+                />
+              </div>
             </div>
-            <div class="modal-body">
-                <form class="form-signin" *ngIf="profesorCurrent">
-                    <div class="row">
-                        <div class="col-6 col-sm-3">
-                            <div class="input-group">
-                                <span class="input-group-text" id="basic-addon1">Nombre</span>
-                                <input value="{{profesorCurrent.nombre}}" name="nombre" type="text" id="inputNombre" class="form-control" placeholder="Nombre" #profesorNombre>
-                            </div>
-                        </div>
-                        <div class="col-6 col-sm-3">
-                            <div class="input-group">
-                                <span class="input-group-text" id="basic-addon1">Apellido</span>
-                                <input value="{{profesorCurrent.apellido}}" name="apellido" type="text" id="inputApellido" class="form-control" placeholder="Apellido" #profesorApellido>
-                            </div>
-                        </div>
-                        <div class="col-6 col-sm-3">
-                            <div class="input-group">
-                                <span class="input-group-text" id="basic-addon1">Rut:</span>
-                                <input value="{{profesorCurrent.rut}}" name="rut" type="text" id="inputRut" class="form-control" placeholder="12345678-9" #profesorRut>
-                            </div>
-                        </div>
-                        <div class="col-6 col-sm-3">
-                            <div class="input-group">
-                                <span class="input-group-text" id="basic-addon1">Edad</span>
-                                <input value="{{profesorCurrent.edad}}" name="edad" type="number" id="inputEdad" class="form-control" placeholder="Edad" #profesorEdad>
-                            </div>
-                        </div>
-                    </div>
-
-
-                    <div class="row">
-                        <div class="col-3">
-                            <p style="color:red;">{{mensaje_nombre}}</p>
-                        </div>
-                        <div class="col-3">
-                            <p style="color:red;">{{mensaje_apellido}}</p>
-                        </div>
-                        <div class="col-3">
-                            <p style="color:red;">{{mensaje_rut}}</p>
-                        </div>
-                        <div class="col-3">
-                            <p style="color:red;">{{mensaje_edad}}</p>
-                        </div>
-                    </div>
-
-                    <div class="row">
-                        <div class="col-12 col-sm-6">
-                            <div class="input-group">
-                                <span class="input-group-text" id="basic-addon1">Correo</span>
-                                <input value="{{profesorCurrent.email}}" name="email" type="text" id="inputEmail" class="form-control" placeholder="ejemplo@ejemplo.cl" #profesorEmail>
-                            </div>
-                        </div>
-                        <div class="col-6 col-sm-3">
-                            <div class="input-group">
-                                <span class="input-group-text" id="basic-addon1">Sexo</span>
-                                <select value="{{profesorCurrent.sexo}}" name="sexo" class="form-select" id="inputGroupSelect02" #profesorSexo>
-                                    <option value="" selected disabled>...</option>
-                                    <option value="M">Mujer</option>
-                                    <option value="H">Hombre</option>
-                                </select>
-                            </div>
-                        </div>
-                        <div class="col-6 col-sm-3">
-                            <div class="input-group">
-                                <span class="input-group-text" id="basic-addon1">Telefono</span>
-                                <input value="{{profesorCurrent.telefono}}" name="telefono" type="text" id="inputTelefono" class="form-control" placeholder="+56912345678" #profesorTelefono>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="row">
-                        <div class="col-6">
-                            <p style="color:red;">{{mensaje_email}}</p>
-                        </div>
-                        <div class="col-3">
-                            <p style="color:red;">{{mensaje_sexo}}</p>
-                        </div>
-                        <div class="col-3">
-                            <p style="color:red;">{{mensaje_telefono}}</p>
-                        </div>
-                    </div>
-
-                    <div class="row">
-                        <div class="col-12 col-sm-6">
-                            <div class="input-group">
-                                <span class="input-group-text" id="basic-addon1">Especialidad</span>
-                                <input value="{{profesorCurrent.especialidad}}" name="especialidad" type="text" id="inputEspecialidad" class="form-control" placeholder="Especialidad" #profesorEspecialidad>
-                            </div>
-                        </div>
-                        <div class="col-6 col-sm-3">
-                            <div class="input-group">
-                                <span class="input-group-text" id="basic-addon1">Fecha Nacimiento</span>
-                                <input value="{{profesorCurrent.fnacimiento}}" name="fnacimiento" type="date" id="inputfechaNacimiento" class="form-control" #profesorFnacimiento>
-                            </div>
-                        </div>
-                        <div class="col-6 col-sm-3">
-                            <div class="input-group">
-                                <span class="input-group-text" id="basic-addon1">Años de Experiencia</span>
-                                <input value="{{profesorCurrent.anos_experiencia}}" name="anos_experiencia" type="number" id="inputanos_experiencia" class="form-control" placeholder="Años" #profesorAnos>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="row">
-                        <div class="col-6">
-                            <p style="color:red;">{{mensaje_especialidad}}</p>
-                        </div>
-                        <div class="col-3">
-                            <p style="color:red;">{{mensaje_fnacimiento}}</p>
-                        </div>
-                        <div class="col-3">
-                            <p style="color:red;">{{mensaje_anosExperiencia}}</p>
-                        </div>
-                    </div>
-                    <div class="row">
-                        <div class="col-12 col-sm-6">
-                            <div class="input-group">
-                                <span class="input-group-text" id="basic-addon1">Dirección</span>
-                                <input value="{{profesorCurrent.direccion}}" name="direccion" type="text" id="inputDireccion" class="form-control" placeholder="Pais, Región, Comuna, Calle 123" #profesorDireccion>
-                            </div>
-                        </div>
-                        <div class="col-6 col-sm-3">
-                            <div class="input-group">
-                                <span class="input-group-text" id="basic-addon1">Disponibilidad</span>
-                                <select value="{{profesorCurrent.disponibilidad}}" name="disponibilidad" class="form-select" id="inputDisponibilidad" #profesorDisponibilidad>
-                                    <option value="" selected disabled>...</option>
-                                    <option value="Full-Time">Full-Time</option>
-                                    <option value="Part-Time">Part-Time</option>
-                                </select>
-                            </div>
-                        </div>
-                        <div class="col-6 col-sm-3">
-                            <div class="input-group">
-                                <span class="input-group-text" id="basic-addon1">Grado Academico</span>
-                                <select value="{{profesorCurrent.grado_academico}}" name="grado_academico" class="form-select" id="inputgrado_academico" #profesorGradoAcademico>
-                                    <option value="" selected disabled>...</option>
-                                    <option value="Profesional">Profesional</option>
-                                    <option value="Doctorado">Doctorado</option>
-                                    <option value="Universidad">Universidad</option>
-            
-                                </select>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="row">
-                        <div class="col-6">
-                            <p style="color:red;">{{mensaje_direccion}}</p>
-                        </div>
-                        <div class="col-3">
-                            <p style="color:red;">{{mensaje_grado_academico}}</p>
-                        </div>
-                        <div class="col-3">
-                            <p style="color:red;">{{mensaje_disponibilidad}}</p>
-                        </div>
-                    </div>
-
-                    <div class="row">
-                        <div class="col-12 col-sm-6">
-                            <div class="input-group">
-                                <span class="input-group-text" id="basic-addon1">Contraseña</span>
-                                <input value="{{profesorCurrent.password}}" name="password" type="password" id="inputPassword" class="form-control" placeholder="**********" #profesorPassword>
-                            </div>
-                        </div>
-                        <div class="col-12 col-sm-6">
-                            <div class="input-group">
-                                <span class="input-group-text" id="basic-addon1">Confirmar Contraseña</span>
-                                <input value="{{profesorCurrent.passwordConfirmation}}" name="passwordConfirmation" type="password" id="inputpasswordConfirmation" class="form-control" placeholder="**********" #profesorPasswordConfirmation>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="row">
-                        <div class="col-6">
-                            <p style="color:red;">{{mensaje_password}}</p>
-                        </div>
-                    </div>
-                    <input value="{{profesorCurrent.id}}" name="id" type="number" id="inputId" class="form-control" hidden #profesorId>
-                    <button type="button" class="btn btn-primary" title="Editar Profesor" (click)="editarProfesor(profesorNombre.value,profesorApellido.value,profesorEdad.value, profesorFnacimiento.value, profesorEmail.value, profesorPassword.value, profesorPasswordConfirmation.value, profesorSexo.value, profesorTelefono.value, profesorEspecialidad.value, profesorAnos.value, profesorRut.value, profesorGradoAcademico.value, profesorDisponibilidad.value, profesorDireccion.value, profesorId.value)">
-                            Editar Profesor                     
-                    </button>
-                </form>
+            <div class="col-6 col-sm-3">
+              <div class="input-group">
+                <span class="input-group-text" id="basic-addon1">Apellido</span>
+                <input
+                  value="{{ profesorCurrent.apellido }}"
+                  name="apellido"
+                  type="text"
+                  id="inputApellido"
+                  class="form-control"
+                  placeholder="Apellido"
+                  #profesorApellido
+                />
+              </div>
             </div>
-        </div>
+            <div class="col-6 col-sm-3">
+              <div class="input-group">
+                <span class="input-group-text" id="basic-addon1">Rut:</span>
+                <input
+                  value="{{ profesorCurrent.rut }}"
+                  name="rut"
+                  type="text"
+                  id="inputRut"
+                  class="form-control"
+                  placeholder="12345678-9"
+                  #profesorRut
+                />
+              </div>
+            </div>
+            <div class="col-6 col-sm-3">
+              <div class="input-group">
+                <span class="input-group-text" id="basic-addon1">Edad</span>
+                <input
+                  value="{{ profesorCurrent.edad }}"
+                  name="edad"
+                  type="number"
+                  id="inputEdad"
+                  class="form-control"
+                  placeholder="Edad"
+                  #profesorEdad
+                />
+              </div>
+            </div>
+          </div>
+
+          <div class="row">
+            <div class="col-3">
+              <p style="color: red">{{ mensaje_nombre }}</p>
+            </div>
+            <div class="col-3">
+              <p style="color: red">{{ mensaje_apellido }}</p>
+            </div>
+            <div class="col-3">
+              <p style="color: red">{{ mensaje_rut }}</p>
+            </div>
+            <div class="col-3">
+              <p style="color: red">{{ mensaje_edad }}</p>
+            </div>
+          </div>
+
+          <div class="row">
+            <div class="col-12 col-sm-6">
+              <div class="input-group">
+                <span class="input-group-text" id="basic-addon1">Correo</span>
+                <input
+                  value="{{ profesorCurrent.email }}"
+                  name="email"
+                  type="text"
+                  id="inputEmail"
+                  class="form-control"
+                  placeholder="ejemplo@ejemplo.cl"
+                  #profesorEmail
+                />
+              </div>
+            </div>
+            <div class="col-6 col-sm-3">
+              <div class="input-group">
+                <span class="input-group-text" id="basic-addon1">Sexo</span>
+                <select
+                  value="{{ profesorCurrent.sexo }}"
+                  name="sexo"
+                  class="form-select"
+                  id="inputGroupSelect02"
+                  #profesorSexo
+                >
+                  <option value="" selected disabled>...</option>
+                  <option value="M">Mujer</option>
+                  <option value="H">Hombre</option>
+                </select>
+              </div>
+            </div>
+            <div class="col-6 col-sm-3">
+              <div class="input-group">
+                <span class="input-group-text" id="basic-addon1">Telefono</span>
+                <input
+                  value="{{ profesorCurrent.telefono }}"
+                  name="telefono"
+                  type="text"
+                  id="inputTelefono"
+                  class="form-control"
+                  placeholder="+56912345678"
+                  #profesorTelefono
+                />
+              </div>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-6">
+              <p style="color: red">{{ mensaje_email }}</p>
+            </div>
+            <div class="col-3">
+              <p style="color: red">{{ mensaje_sexo }}</p>
+            </div>
+            <div class="col-3">
+              <p style="color: red">{{ mensaje_telefono }}</p>
+            </div>
+          </div>
+
+          <div class="row">
+            <div class="col-12 col-sm-6">
+              <div class="input-group">
+                <span class="input-group-text" id="basic-addon1"
+                  >Especialidad</span
+                >
+                <input
+                  value="{{ profesorCurrent.especialidad }}"
+                  name="especialidad"
+                  type="text"
+                  id="inputEspecialidad"
+                  class="form-control"
+                  placeholder="Especialidad"
+                  #profesorEspecialidad
+                />
+              </div>
+            </div>
+            <div class="col-6 col-sm-3">
+              <div class="input-group">
+                <span class="input-group-text" id="basic-addon1"
+                  >Fecha Nacimiento</span
+                >
+                <input
+                  value="{{ profesorCurrent.fnacimiento }}"
+                  disabled
+                  name="fnacimiento"
+                  type="text"
+                  id="inputfechaNacimiento"
+                  class="form-control"
+                  #profesorFnacimiento
+                />
+              </div>
+            </div>
+            <div class="col-6 col-sm-3">
+              <div class="input-group">
+                <span class="input-group-text" id="basic-addon1"
+                  >Años de Experiencia</span
+                >
+                <input
+                  value="{{ profesorCurrent.anos_experiencia }}"
+                  name="anos_experiencia"
+                  type="number"
+                  id="inputanos_experiencia"
+                  class="form-control"
+                  placeholder="Años"
+                  #profesorAnos
+                />
+              </div>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-6">
+              <p style="color: red">{{ mensaje_especialidad }}</p>
+            </div>
+            <div class="col-3">
+              <p style="color: red">{{ mensaje_fnacimiento }}</p>
+            </div>
+            <div class="col-3">
+              <p style="color: red">{{ mensaje_anosExperiencia }}</p>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-12 col-sm-6">
+              <div class="input-group">
+                <span class="input-group-text" id="basic-addon1"
+                  >Dirección</span
+                >
+                <input
+                  value="{{ profesorCurrent.direccion }}"
+                  name="direccion"
+                  type="text"
+                  id="inputDireccion"
+                  class="form-control"
+                  placeholder="Pais, Región, Comuna, Calle 123"
+                  #profesorDireccion
+                />
+              </div>
+            </div>
+            <div class="col-6 col-sm-3">
+              <div class="input-group">
+                <span class="input-group-text" id="basic-addon1"
+                  >Disponibilidad</span
+                >
+                <select
+                  value="{{ profesorCurrent.disponibilidad }}"
+                  name="disponibilidad"
+                  class="form-select"
+                  id="inputDisponibilidad"
+                  #profesorDisponibilidad
+                >
+                  <option value="" selected disabled>...</option>
+                  <option value="Full-Time">Full-Time</option>
+                  <option value="Part-Time">Part-Time</option>
+                </select>
+              </div>
+            </div>
+            <div class="col-6 col-sm-3">
+              <div class="input-group">
+                <span class="input-group-text" id="basic-addon1"
+                  >Grado Academico</span
+                >
+                <select
+                  value="{{ profesorCurrent.grado_academico }}"
+                  name="grado_academico"
+                  class="form-select"
+                  id="inputgrado_academico"
+                  #profesorGradoAcademico
+                >
+                  <option value="" selected disabled>...</option>
+                  <option value="Profesional">Profesional</option>
+                  <option value="Doctorado">Doctorado</option>
+                  <option value="Universidad">Universidad</option>
+                </select>
+              </div>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-6">
+              <p style="color: red">{{ mensaje_direccion }}</p>
+            </div>
+            <div class="col-3">
+              <p style="color: red">{{ mensaje_grado_academico }}</p>
+            </div>
+            <div class="col-3">
+              <p style="color: red">{{ mensaje_disponibilidad }}</p>
+            </div>
+          </div>
+
+          <div class="row">
+            <div class="col-12 col-sm-6">
+              <div class="input-group">
+                <span class="input-group-text" id="basic-addon1"
+                  >Contraseña</span
+                >
+                <input
+                  value="{{ profesorCurrent.password }}"
+                  name="password"
+                  type="password"
+                  id="inputPassword"
+                  class="form-control"
+                  placeholder="**********"
+                  #profesorPassword
+                />
+              </div>
+            </div>
+            <div class="col-12 col-sm-6">
+              <div class="input-group">
+                <span class="input-group-text" id="basic-addon1"
+                  >Confirmar Contraseña</span
+                >
+                <input
+                  value="{{ profesorCurrent.passwordConfirmation }}"
+                  name="passwordConfirmation"
+                  type="password"
+                  id="inputpasswordConfirmation"
+                  class="form-control"
+                  placeholder="**********"
+                  #profesorPasswordConfirmation
+                />
+              </div>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-6">
+              <p style="color: red">{{ mensaje_password }}</p>
+            </div>
+          </div>
+          <input
+            value="{{ profesorCurrent.id }}"
+            name="id"
+            type="number"
+            id="inputId"
+            class="form-control"
+            hidden
+            #profesorId
+          />
+          <button
+            type="button"
+            class="btn btn-primary"
+            title="Editar Profesor"
+            (click)="
+              editarProfesor(
+                profesorNombre.value,
+                profesorApellido.value,
+                profesorEdad.value,
+                profesorFnacimiento.value,
+                profesorEmail.value,
+                profesorPassword.value,
+                profesorPasswordConfirmation.value,
+                profesorSexo.value,
+                profesorTelefono.value,
+                profesorEspecialidad.value,
+                profesorAnos.value,
+                profesorRut.value,
+                profesorGradoAcademico.value,
+                profesorDisponibilidad.value,
+                profesorDireccion.value,
+                profesorId.value
+              )
+            "
+          >
+            Editar Profesor
+          </button>
+        </form>
+      </div>
     </div>
+  </div>
+</div>
