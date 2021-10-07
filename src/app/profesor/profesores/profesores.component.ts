@@ -24,6 +24,15 @@ export class ProfesoresComponent implements OnInit {
     await this.profesorService
       .elimina(profesor.id)
       .subscribe((result) => console.log(result));
-    await this.profesorService.cargarProfesores();
+    //await this.profesorService.cargarProfesores();
+    //window.location.reload();
+    //await this.constructor;
+
+    let eliminar = this.profesorService.profesor.findIndex(
+      profe => profe.id === profesor.id
+    );
+
+    this.profesorService.profesor.splice(eliminar, 1);
+    
   }
 }
