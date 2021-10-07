@@ -25,9 +25,14 @@ export class ProfesorService {
 
   public save(profesor: Profesor) {
     return this.http.post<Profesor>(this.url + '/agregar_profesor', profesor);
+    
   }
   
   public edit(profesor: Profesor) {
-    return this.http.post<Profesor>(this.url + '/actualizar_profesor', profesor);
+    return this.http.put<Profesor>(this.url + '/actualizar_profesor', profesor);
+  }
+
+  public elimina(id: any){
+    return this.http.delete<Profesor>(this.url + '/eliminar_profesor/'+ id);
   }
 }

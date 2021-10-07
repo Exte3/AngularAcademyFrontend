@@ -53,6 +53,7 @@ export class ProfesorComponent implements OnInit {
   mensaje_disponibilidad: string | null= "";
   mensaje_direccion: string | null= "";
 
+
   insertar(): void {
     var valido = 0;
     let regexp = new RegExp(/^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/);

@@ -16,10 +16,15 @@ const routes: Routes = [
   { path: 'profesores', component: ProfesoresComponent },
   { path: 'editarprofesor', component: EditarprofesorComponent },
   { path: '**', component: ErrorComponent },
+  
 ];
 
 @NgModule({
-  imports: [RouterModule.forRoot(routes)],
+  imports: [
+    RouterModule.forRoot(routes)],
+    
+  
   exports: [RouterModule],
+  
 })
 export class AppRoutingModule {}

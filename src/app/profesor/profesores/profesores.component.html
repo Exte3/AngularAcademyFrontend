@@ -32,10 +32,11 @@
                     </a>
                     
                 </button>
-                <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal" title="Editar Profesor" (click)="enviarModal(profesorSelect.value)">
-                    Editar
+                <button type="submit" class="btn btn-primary" (click)=eliminaProfesor(profesor) routerLink="profesores">
+                    Eliminar
                 </button>
             </td>
+
         </tr>
     </table>
 </div>

@@ -20,7 +20,13 @@ export class ProfesoresComponent implements OnInit {
     this.profesorCurrent = this.profesorService.profesor.find(profesor => profesor.id == profesorSelect);
   }
 
+  eliminaProfesor(profesor: Profesor){
+    console.log("esta a punto de eliminar el profesor de id: ", profesor.id);
 
+    //let eliminar = this.profesorService.profesor.findIndex(profe => profe.id === profesor.id);
+
+    this.profesorService.elimina(profesor.id).subscribe( result => console.log(result) );
+  }
 }
 
 
