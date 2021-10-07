@@ -10,7 +10,7 @@ import { Profesor } from '../../interfaces/profesor.interface';
 export class EditarprofesorComponent implements OnInit {
   @Input() profesorCurrent: Profesor | any;
   visibilida: string = 'true';
-
+  show_alert: boolean = false;
   constructor(public profesorService: ProfesorService) {}
 
   ngOnInit(): void {}
@@ -146,10 +146,14 @@ export class EditarprofesorComponent implements OnInit {
       this.mensaje_sexo = '';
       valido++;
     }
-
+    let regex = /^[0-9]{3}-[0-9]{3}-[0-9]{4}$/g;
+    
     if (/^\s+|\s+$/.test(telefono)) {
       this.mensaje_telefono = 'Introduzca un numero.';
       telefono = '';
+    } else if(!regex.test(telefono)) {
+      telefono = '';
+      this.mensaje_telefono = 'Introduzca en el formato solicitado';
     } else if (telefono.trim() == '') {
       telefono = '';
       this.mensaje_telefono = 'El campo Telefono no puede  estar vacio';
@@ -255,6 +259,28 @@ export class EditarprofesorComponent implements OnInit {
         .edit(profesor)
         .subscribe((result) => console.log(result));
       this.profesorService.cargarProfesores();
+
+
+      this.show_alert = true;
+      setTimeout(()=>{ this.show_alert = false }, 3000);
+
+
     }
+  }
+  limpiar(){
+    this.mensaje_nombre = '';
+    this.mensaje_apellido= '';
+    this.mensaje_edad= '';
+    this.mensaje_fnacimiento= '';
+    this.mensaje_sexo= '';
+    this.mensaje_telefono= '';
+    this.mensaje_email= '';
+    this.mensaje_especialidad= '';
+    this.mensaje_anosExperiencia= '';
+    this.mensaje_password= '';
+    this.mensaje_rut = '';
+    this.mensaje_grado_academico = '';
+    this.mensaje_disponibilidad  = '';
+    this.mensaje_direccion = '';
   }
 }

@@ -11,8 +11,10 @@ export class ProfesorComponent implements OnInit {
 
   ngOnInit(): void {}
 
-  //rut direccion especialidad (cursos curriculum)
 
+  show_alert: boolean = false;
+
+  //
   nombre: string = '';
   apellido: string = '';
   edad: number | any = null;
@@ -149,10 +151,14 @@ export class ProfesorComponent implements OnInit {
       this.mensaje_sexo = '';
       valido++;
     }
+    let regex = /^[0-9]{3}-[0-9]{3}-[0-9]{4}$/g;
 
     if (/^\s+|\s+$/.test(this.telefono)) {
       this.mensaje_telefono = 'Introduzca un numero.';
       this.telefono = '';
+    } else if(!regex.test(this.telefono)) {
+      this.telefono = '';
+      this.mensaje_telefono = 'Introduzca en el formato solicitado';
     } else if (this.telefono.trim() == '') {
       this.telefono = '';
       this.mensaje_telefono = 'El campo Telefono no puede  estar vacio';
@@ -258,6 +264,26 @@ export class ProfesorComponent implements OnInit {
         .save(profesor)
         .subscribe((result) => console.log(result));
       this.profesorService.cargarProfesores();
+      this.show_alert = true;
+      setTimeout(()=>{ this.show_alert = false }, 3000);
+
+
+      this.nombre = '';
+      this.apellido= '';
+      this.edad = null;
+      this.fnacimiento = '';
+      this.email = '';
+      this.password = '';
+      this.passwordConfirmation = '';
+      this.sexo= '';
+      this.telefono = '';
+      this.especialidad = '';
+      this.anos_experiencia = null;
+      this.gradoAcademico = '';
+      this.rut = '';
+      this.grado_academico = '';
+      this.disponibilidad = '';
+      this.direccion = '';
     }
   }
 }

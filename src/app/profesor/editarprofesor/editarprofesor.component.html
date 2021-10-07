@@ -1,160 +1,94 @@
-<div
-  class="modal fade"
-  id="exampleModal"
-  tabindex="-1"
-  aria-labelledby="exampleModalLabel"
-  aria-hidden="true"
->
-  <div class="modal-dialog modal-xl">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h5 class="modal-title" id="exampleModalLabel">Editar Profesor</h5>
-        <button
-          type="button"
-          class="btn-close"
-          data-bs-dismiss="modal"
-          aria-label="Close"
-        ></button>
-      </div>
-      <div class="modal-body">
-        <form class="form-signin" *ngIf="profesorCurrent">
-          <div class="row">
-            <div class="col-6 col-sm-3">
-              <div class="input-group">
-                <span class="input-group-text" id="basic-addon1">Nombre</span>
-                <input
-                  value="{{ profesorCurrent.nombre }}"
-                  name="nombre"
-                  type="text"
-                  id="inputNombre"
-                  class="form-control"
-                  placeholder="Nombre"
-                  #profesorNombre
-                />
-              </div>
+<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-xl">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">Editar Profesor</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close" (click)="limpiar()"></button>
             </div>
-            <div class="col-6 col-sm-3">
-              <div class="input-group">
-                <span class="input-group-text" id="basic-addon1">Apellido</span>
-                <input
-                  value="{{ profesorCurrent.apellido }}"
-                  name="apellido"
-                  type="text"
-                  id="inputApellido"
-                  class="form-control"
-                  placeholder="Apellido"
-                  #profesorApellido
-                />
-              </div>
-            </div>
-            <div class="col-6 col-sm-3">
-              <div class="input-group">
-                <span class="input-group-text" id="basic-addon1">Rut:</span>
-                <input
-                  value="{{ profesorCurrent.rut }}"
-                  name="rut"
-                  type="text"
-                  id="inputRut"
-                  class="form-control"
-                  placeholder="12345678-9"
-                  #profesorRut
-                />
-              </div>
-            </div>
-            <div class="col-6 col-sm-3">
-              <div class="input-group">
-                <span class="input-group-text" id="basic-addon1">Edad</span>
-                <input
-                  value="{{ profesorCurrent.edad }}"
-                  name="edad"
-                  type="number"
-                  id="inputEdad"
-                  class="form-control"
-                  placeholder="Edad"
-                  #profesorEdad
-                />
-              </div>
-            </div>
-          </div>
+            <div class="modal-body">
+                <form class="form-signin" *ngIf="profesorCurrent">
+                    <div class="row">
+                        <div class="col-6 col-sm-3">
+                            <div class="input-group">
+                                <span class="input-group-text" id="basic-addon1">Nombre</span>
+                                <input value="{{ profesorCurrent.nombre }}" name="nombre" type="text" id="inputNombre" class="form-control" placeholder="Nombre" #profesorNombre />
+                            </div>
+                        </div>
+                        <div class="col-6 col-sm-3">
+                            <div class="input-group">
+                                <span class="input-group-text" id="basic-addon1">Apellido</span>
+                                <input value="{{ profesorCurrent.apellido }}" name="apellido" type="text" id="inputApellido" class="form-control" placeholder="Apellido" #profesorApellido />
+                            </div>
+                        </div>
+                        <div class="col-6 col-sm-3">
+                            <div class="input-group">
+                                <span class="input-group-text" id="basic-addon1">Rut:</span>
+                                <input value="{{ profesorCurrent.rut }}" name="rut" type="text" id="inputRut" class="form-control" placeholder="12345678-9" #profesorRut />
+                            </div>
+                        </div>
+                        <div class="col-6 col-sm-3">
+                            <div class="input-group">
+                                <span class="input-group-text" id="basic-addon1">Edad</span>
+                                <input value="{{ profesorCurrent.edad }}" name="edad" type="number" id="inputEdad" class="form-control" placeholder="Edad" #profesorEdad />
+                            </div>
+                        </div>
+                    </div>
 
-          <div class="row">
-            <div class="col-3">
-              <p style="color: red">{{ mensaje_nombre }}</p>
-            </div>
-            <div class="col-3">
-              <p style="color: red">{{ mensaje_apellido }}</p>
-            </div>
-            <div class="col-3">
-              <p style="color: red">{{ mensaje_rut }}</p>
-            </div>
-            <div class="col-3">
-              <p style="color: red">{{ mensaje_edad }}</p>
-            </div>
-          </div>
+                    <div class="row">
+                        <div class="col-3">
+                            <p style="color: red">{{ mensaje_nombre }}</p>
+                        </div>
+                        <div class="col-3">
+                            <p style="color: red">{{ mensaje_apellido }}</p>
+                        </div>
+                        <div class="col-3">
+                            <p style="color: red">{{ mensaje_rut }}</p>
+                        </div>
+                        <div class="col-3">
+                            <p style="color: red">{{ mensaje_edad }}</p>
+                        </div>
+                    </div>
 
-          <div class="row">
-            <div class="col-12 col-sm-6">
-              <div class="input-group">
-                <span class="input-group-text" id="basic-addon1">Correo</span>
-                <input
-                  value="{{ profesorCurrent.email }}"
-                  name="email"
-                  type="text"
-                  id="inputEmail"
-                  class="form-control"
-                  placeholder="ejemplo@ejemplo.cl"
-                  #profesorEmail
-                />
-              </div>
-            </div>
-            <div class="col-6 col-sm-3">
-              <div class="input-group">
-                <span class="input-group-text" id="basic-addon1">Sexo</span>
-                <select
-                  value="{{ profesorCurrent.sexo }}"
-                  name="sexo"
-                  class="form-select"
-                  id="inputGroupSelect02"
-                  #profesorSexo
-                >
+                    <div class="row">
+                        <div class="col-12 col-sm-6">
+                            <div class="input-group">
+                                <span class="input-group-text" id="basic-addon1">Correo</span>
+                                <input value="{{ profesorCurrent.email }}" name="email" type="text" id="inputEmail" class="form-control" placeholder="ejemplo@ejemplo.cl" #profesorEmail />
+                            </div>
+                        </div>
+                        <div class="col-6 col-sm-3">
+                            <div class="input-group">
+                                <span class="input-group-text" id="basic-addon1">Sexo</span>
+                                <select value="{{ profesorCurrent.sexo }}" name="sexo" class="form-select" id="inputGroupSelect02" #profesorSexo>
                   <option value="" selected disabled>...</option>
                   <option value="M">Mujer</option>
                   <option value="H">Hombre</option>
                 </select>
-              </div>
-            </div>
-            <div class="col-6 col-sm-3">
-              <div class="input-group">
-                <span class="input-group-text" id="basic-addon1">Telefono</span>
-                <input
-                  value="{{ profesorCurrent.telefono }}"
-                  name="telefono"
-                  type="text"
-                  id="inputTelefono"
-                  class="form-control"
-                  placeholder="+56912345678"
-                  #profesorTelefono
-                />
-              </div>
-            </div>
-          </div>
-          <div class="row">
-            <div class="col-6">
-              <p style="color: red">{{ mensaje_email }}</p>
-            </div>
-            <div class="col-3">
-              <p style="color: red">{{ mensaje_sexo }}</p>
-            </div>
-            <div class="col-3">
-              <p style="color: red">{{ mensaje_telefono }}</p>
-            </div>
-          </div>
+                            </div>
+                        </div>
+                        <div class="col-6 col-sm-3">
+                            <div class="input-group">
+                                <span class="input-group-text" id="basic-addon1">Telefono</span>
+                                <input value="{{ profesorCurrent.telefono }}" name="telefono" type="text" id="inputTelefono" class="form-control" placeholder="XXX-XXX-XXXX" #profesorTelefono />
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-6">
+                            <p style="color: red">{{ mensaje_email }}</p>
+                        </div>
+                        <div class="col-3">
+                            <p style="color: red">{{ mensaje_sexo }}</p>
+                        </div>
+                        <div class="col-3">
+                            <p style="color: red">{{ mensaje_telefono }}</p>
+                        </div>
+                    </div>
 
-          <div class="row">
-            <div class="col-12 col-sm-6">
-              <div class="input-group">
-                <span class="input-group-text" id="basic-addon1"
-                  >Especialidad</span
+                    <div class="row">
+                        <div class="col-12 col-sm-4">
+                            <div class="input-group">
+                                <span class="input-group-text" id="basic-addon1">Especialidad</span
                 >
                 <input
                   value="{{ profesorCurrent.especialidad }}"
@@ -167,7 +101,7 @@
                 />
               </div>
             </div>
-            <div class="col-6 col-sm-3">
+            <div class="col-6 col-sm-4">
               <div class="input-group">
                 <span class="input-group-text" id="basic-addon1"
                   >Fecha Nacimiento</span
@@ -179,11 +113,12 @@
                   format="yyyy-mm-dd"
                   id="inputfechaNacimiento"
                   class="form-control"
+                  max="2021-10-10"
                   #profesorFnacimiento
                 />
               </div>
             </div>
-            <div class="col-6 col-sm-3">
+            <div class="col-6 col-sm-4">
               <div class="input-group">
                 <span class="input-group-text" id="basic-addon1"
                   >Años de Experiencia</span
@@ -201,13 +136,13 @@
             </div>
           </div>
           <div class="row">
-            <div class="col-6">
+            <div class="col-4">
               <p style="color: red">{{ mensaje_especialidad }}</p>
             </div>
-            <div class="col-3">
+            <div class="col-4">
               <p style="color: red">{{ mensaje_fnacimiento }}</p>
             </div>
-            <div class="col-3">
+            <div class="col-4">
               <p style="color: red">{{ mensaje_anosExperiencia }}</p>
             </div>
           </div>
@@ -353,6 +288,12 @@
           >
             Editar Profesor
           </button>
+          <br>
+          <div *ngIf="show_alert==true" class="alert alert-success mt-2 text-center" role="alert" >
+            <b>
+              ¡¡¡Profesor editado con exito!!!
+            </b>
+          </div>
         </form>
       </div>
     </div>
