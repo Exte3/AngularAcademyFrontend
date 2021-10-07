@@ -18,12 +18,12 @@ export class ProfesoresComponent implements OnInit {
     );
   }
 
-  eliminaProfesor(profesor: Profesor) {
+  async eliminaProfesor(profesor: Profesor) {
     console.log('esta a punto de eliminar el profesor de id: ', profesor.id);
 
-    this.profesorService
+    await this.profesorService
       .elimina(profesor.id)
       .subscribe((result) => console.log(result));
-    this.profesorService.cargarProfesores();
+    await this.profesorService.cargarProfesores();
   }
 }
