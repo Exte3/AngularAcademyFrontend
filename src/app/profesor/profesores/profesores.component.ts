@@ -24,5 +24,6 @@ export class ProfesoresComponent implements OnInit {
     this.profesorService
       .elimina(profesor.id)
       .subscribe((result) => console.log(result));
+    this.profesorService.cargarProfesores();
   }
 }

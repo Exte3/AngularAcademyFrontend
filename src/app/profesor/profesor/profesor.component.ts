@@ -257,6 +257,7 @@ export class ProfesorComponent implements OnInit {
       this.profesorService
         .save(profesor)
         .subscribe((result) => console.log(result));
+      this.profesorService.cargarProfesores();
     }
   }
 }

@@ -275,6 +275,7 @@ export class EditarprofesorComponent implements OnInit {
       this.profesorService
         .edit(profesor)
         .subscribe((result) => console.log(result));
+      this.profesorService.cargarProfesores();
     }
   }
 }
