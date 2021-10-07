@@ -9,28 +9,7 @@ import { Profesor } from '../../interfaces/profesor.interface';
 })
 export class EditarprofesorComponent implements OnInit {
   @Input() profesorCurrent: Profesor | any;
-  //profesorEdit: Profesor |any;
-  /*
-  nombre: string = "";
-  apellido: string = "";
-  edad: number|any = null;
-  fnacimiento: string = "";
-  email:string = "";
-  password: string = "";
-  passwordConfirmation: string = "";
-  sexo: string = "";
-  telefono: string = "";
-  especialidad: string = "";
-  anos_experiencia: number|any = null;
-  rut: string = "";
-  grado_academico: string = "";
-  disponibilidad: string = "";
-  direccion: string = "";
-  profesorEdit: Profesor = {nombre:"", apellido:"", edad:0, fnacimiento:"", 
-  email:"", especialidad:"", anos_experiencia:0, grado_academico:"", password:"", 
-  passwordConfirmation:"", rut:"", disponibilidad:"", direccion:"", asignaturas:"",
-  createdAt:"", id: 0, updatedAt: "", inicio_contrato:"", telefono:"" , sexo:""};
-  */
+  visibilida: string = 'true';
 
   constructor(public profesorService: ProfesorService) {}
 
