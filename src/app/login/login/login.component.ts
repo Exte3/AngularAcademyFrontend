@@ -1,24 +1,27 @@
 import { Component, OnInit } from '@angular/core';
+import { HttpClient } from '@angular/common/http';
 
 @Component({
   selector: 'app-login',
   templateUrl: './login.component.html',
-  styleUrls: ['./login.component.css']
+  styleUrls: ['./login.component.css'],
 })
 export class LoginComponent implements OnInit {
-
-  constructor() { }
-
-  ngOnInit(): void {
+  private url: string;
+  constructor(public http: HttpClient) {
+    this.url = 'http://localhost:8080/api';
   }
-  email: string= "";
-  password: string = "";
 
-  mensaje_password: string | any = "";
-  mensaje_email:string | any= "";
+  ngOnInit(): void {}
+  email: string = '';
+  password: string = '';
 
-  insertar(){
-    let regexp = new RegExp(/^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/);
+  mensaje_password: string | any = '';
+  mensaje_email: string | any = '';
+
+  insertar() {
+    //por ahora comentada para facilidad de pruebas
+    /*let regexp = new RegExp(/^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/);
 
     if (!this.email){
       this.mensaje_email = "El campo Email no puede  estar vacio";
@@ -44,6 +47,6 @@ export class LoginComponent implements OnInit {
       this.mensaje_password = "El campo Contraseña no puede  estar vacio";
     } else {
       this.mensaje_password = "";
-    }
+    }*/
   }
 }
