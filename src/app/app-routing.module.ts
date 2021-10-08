@@ -7,6 +7,7 @@ import { RegistroComponent } from './login/registro/registro.component';
 import { EditarprofesorComponent } from './profesor/editarprofesor/editarprofesor.component';
 import { ProfesoresComponent } from './profesor/profesores/profesores.component';
 import { ErrorComponent } from './general/error/error.component';
+import { GraficoComponent } from './general/grafico/grafico.component';
 
 const routes: Routes = [
   { path: '', component: HomeComponent },
@@ -15,16 +16,13 @@ const routes: Routes = [
   { path: 'registrarprofesor', component: ProfesorComponent },
   { path: 'profesores', component: ProfesoresComponent },
   { path: 'editarprofesor', component: EditarprofesorComponent },
+  { path: 'grafico', component: GraficoComponent },
   { path: '**', component: ErrorComponent },
-  
 ];
 
 @NgModule({
-  imports: [
-    RouterModule.forRoot(routes)],
-    
-  
+  imports: [RouterModule.forRoot(routes)],
+
   exports: [RouterModule],
-  
 })
 export class AppRoutingModule {}

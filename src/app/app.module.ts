@@ -9,6 +9,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { LoginModule } from './login/login.module';
 import { ProfesorModule } from './profesor/profesor.module';
 import { CompartidaModule } from './compartida/compartida.module';
+import { GeneralModule } from './general/general.module';
 
 @NgModule({
   declarations: [AppComponent],
@@ -20,6 +21,7 @@ import { CompartidaModule } from './compartida/compartida.module';
     LoginModule,
     ProfesorModule,
     CompartidaModule,
+    GeneralModule,
   ],
   providers: [],
   bootstrap: [AppComponent],
